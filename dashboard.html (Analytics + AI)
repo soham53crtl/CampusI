@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CampusIQ Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header><h1>📊 CampusIQ Dashboard</h1></header>
+
+<div class="dashboard">
+<div class="box">Total Students: 1200</div>
+<div class="box">High Risk Students: 45</div>
+<div class="box">Complaints: 12</div>
+<div class="box">Events Today: 3</div>
+</div>
+
+<a href="chatbot.html"><button>Open AI Chatbot</button></a>
+
+<h2>📈 Student Performance Analytics</h2>
+<canvas id="marksChart"></canvas>
+<canvas id="attendanceChart"></canvas>
+
+<h2>Student Risk Prediction</h2>
+<input type="number" id="marks" placeholder="Enter Marks">
+<input type="number" id="attendance" placeholder="Attendance %">
+<button onclick="predict()">Predict</button>
+<p id="result"></p>
+
+<script src="script.js"></script>
+<script>
+new Chart(document.getElementById('marksChart'), {
+  type: 'bar',
+  data: {
+    labels: ['A','B','C','D'],
+    datasets: [{label:'Marks', data:[85,60,40,90], backgroundColor:'cyan'}]
+  }
+});
+
+new Chart(document.getElementById('attendanceChart'), {
+  type: 'line',
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri'],
+    datasets: [{label:'Attendance %', data:[80,85,70,90,95], borderColor:'lime'}]
+  }
+});
+</script>
+
+</body>
+</html>
