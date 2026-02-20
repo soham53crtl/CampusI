@@ -49,3 +49,9 @@ new Chart(document.getElementById('attendanceChart'), {
 
 </body>
 </html>
+<h2 id="welcome"></h2>
+
+<script>
+let user = localStorage.getItem("campusiq_user");
+document.getElementById("welcome").innerText = "Welcome, " + user;
+</script>
